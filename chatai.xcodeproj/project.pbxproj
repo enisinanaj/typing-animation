@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F10691F1E5D9A6A00973BD1 /* DeprecatedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F10691E1E5D9A6A00973BD1 /* DeprecatedController.swift */; };
 		5FF755131E5CAF8400F37194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF755121E5CAF8400F37194 /* AppDelegate.swift */; };
 		5FF755151E5CAF8400F37194 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF755141E5CAF8400F37194 /* ViewController.swift */; };
 		5FF755181E5CAF8400F37194 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FF755161E5CAF8400F37194 /* Main.storyboard */; };
 		5FF7551A1E5CAF8400F37194 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FF755191E5CAF8400F37194 /* Assets.xcassets */; };
 		5FF7551D1E5CAF8400F37194 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FF7551B1E5CAF8400F37194 /* LaunchScreen.storyboard */; };
+		970682EE3653EA075FC5A1FA /* Pods_chatai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8289A248DFF0E22C4E0BE32D /* Pods_chatai.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3EEDAA6977B27F63C22B9729 /* Pods-chatai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatai.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chatai/Pods-chatai.debug.xcconfig"; sourceTree = "<group>"; };
+		5F10691E1E5D9A6A00973BD1 /* DeprecatedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeprecatedController.swift; sourceTree = "<group>"; };
 		5FF7550F1E5CAF8400F37194 /* chatai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chatai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF755121E5CAF8400F37194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FF755141E5CAF8400F37194 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		5FF755191E5CAF8400F37194 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FF7551C1E5CAF8400F37194 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FF7551E1E5CAF8400F37194 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FF2B1F1DC9B924B8FB5AA55 /* Pods-chatai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatai.release.xcconfig"; path = "Pods/Target Support Files/Pods-chatai/Pods-chatai.release.xcconfig"; sourceTree = "<group>"; };
+		8289A248DFF0E22C4E0BE32D /* Pods_chatai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chatai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				970682EE3653EA075FC5A1FA /* Pods_chatai.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4334BFF749D6A85DFEA4FA66 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3EEDAA6977B27F63C22B9729 /* Pods-chatai.debug.xcconfig */,
+				6FF2B1F1DC9B924B8FB5AA55 /* Pods-chatai.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5FF755061E5CAF8400F37194 = {
 			isa = PBXGroup;
 			children = (
 				5FF755111E5CAF8400F37194 /* chatai */,
 				5FF755101E5CAF8400F37194 /* Products */,
+				4334BFF749D6A85DFEA4FA66 /* Pods */,
+				AA7AACCC8DA7DDAE30E19429 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +78,17 @@
 				5FF755191E5CAF8400F37194 /* Assets.xcassets */,
 				5FF7551B1E5CAF8400F37194 /* LaunchScreen.storyboard */,
 				5FF7551E1E5CAF8400F37194 /* Info.plist */,
+				5F10691E1E5D9A6A00973BD1 /* DeprecatedController.swift */,
 			);
 			path = chatai;
+			sourceTree = "<group>";
+		};
+		AA7AACCC8DA7DDAE30E19429 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8289A248DFF0E22C4E0BE32D /* Pods_chatai.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5FF755211E5CAF8500F37194 /* Build configuration list for PBXNativeTarget "chatai" */;
 			buildPhases = (
+				AA444F34C0D7BA554EE65E01 /* [CP] Check Pods Manifest.lock */,
 				5FF7550B1E5CAF8400F37194 /* Sources */,
 				5FF7550C1E5CAF8400F37194 /* Frameworks */,
 				5FF7550D1E5CAF8400F37194 /* Resources */,
+				86BE276A4E52585141E4AF4C /* [CP] Embed Pods Frameworks */,
+				BDCA4FB49792CB684A9C8FC5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,11 +162,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		86BE276A4E52585141E4AF4C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chatai/Pods-chatai-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA444F34C0D7BA554EE65E01 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BDCA4FB49792CB684A9C8FC5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chatai/Pods-chatai-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5FF7550B1E5CAF8400F37194 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F10691F1E5D9A6A00973BD1 /* DeprecatedController.swift in Sources */,
 				5FF755151E5CAF8400F37194 /* ViewController.swift in Sources */,
 				5FF755131E5CAF8400F37194 /* AppDelegate.swift in Sources */,
 			);
@@ -257,6 +336,7 @@
 		};
 		5FF755221E5CAF8500F37194 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EEDAA6977B27F63C22B9729 /* Pods-chatai.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4M42GDL5VX;
@@ -270,6 +350,7 @@
 		};
 		5FF755231E5CAF8500F37194 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FF2B1F1DC9B924B8FB5AA55 /* Pods-chatai.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4M42GDL5VX;
@@ -300,6 +381,7 @@
 				5FF755231E5CAF8500F37194 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
