@@ -10,11 +10,7 @@ import UIKit
 import pop
 
 class ViewController: UIViewController {
-    // this records our circle's center for use as an offset while dragging
-    var circleCenter: CGPoint!
     // We will attach various animations to this in response to drag events
-    var circleAnimator: UIViewPropertyAnimator?
-    var circle: UIView?
     var currentStartingYPoint: Double = 55
 
     override func viewDidLoad() {
@@ -26,14 +22,14 @@ class ViewController: UIViewController {
     
     func addTypingAnimation() {
         // Add a draggable view
-        circle = UIView(frame: CGRect(x: 30.0, y: currentStartingYPoint, width: 10.0, height: 10.0))
+        let circle = UIView(frame: CGRect(x: 30.0, y: currentStartingYPoint, width: 10.0, height: 10.0))
         //circle.center = self.view.center
-        circle?.layer.cornerRadius = 5.0
-        circle?.backgroundColor = UIColor(red:0.16, green:0.50, blue:0.73, alpha:1.0)
+        circle.layer.cornerRadius = 5.0
+        circle.backgroundColor = UIColor(red:0.16, green:0.50, blue:0.73, alpha:1.0)
         
-        animateDown()
+        animateDown(view: circle)
         
-        self.view.addSubview(circle!)
+        self.view.addSubview(circle)
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,8 +37,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func animateDown() {
-        let newY = (self.circle?.frame.origin.y)! + 15.0
+    func animateDown(view: UIView) {
+        let newY = currentStartingYPoint + 15.0
         
         let toNewYAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
         toNewYAnimation?.name = "newYAnimationDown"
@@ -51,14 +47,14 @@ class ViewController: UIViewController {
         toNewYAnimation?.springBounciness = 17
         toNewYAnimation?.completionBlock = {(anim: POPAnimation?, finished: Bool) -> Void in
             if anim?.name == "newYAnimationDown" {
-                self.animateUp()
+                self.animateUp(view: view)
             }
         }
         
-        self.circle?.layer.pop_add(toNewYAnimation, forKey: "newYAnimationDown")
+        view.layer.pop_add(toNewYAnimation, forKey: "newYAnimationDown")
     }
     
-    func animateUp() {
+    func animateUp(view: UIView) {
         let newY = currentStartingYPoint
         
         let toNewYAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
@@ -67,11 +63,11 @@ class ViewController: UIViewController {
         toNewYAnimation?.toValue = newY
         toNewYAnimation?.completionBlock = {(anim: POPAnimation?, finished: Bool) -> Void in
             if anim?.name == "newYAnimationTop" {
-                self.animateDown()
+                self.animateDown(view: view)
             }
         }
         
-        self.circle?.layer.pop_add(toNewYAnimation, forKey: "newYAnimationTop")
+        view.layer.pop_add(toNewYAnimation, forKey: "newYAnimationTop")
     }
 
 }
