@@ -28,17 +28,17 @@ class ViewController: UIViewController {
     
     func initCircles() {
         // Add a draggable view
-        circle = UIView(frame: CGRect(x: 30.0, y: currentStartingYPoint, width: 10.0, height: 10.0))
+        circle = UIView(frame: CGRect(x: 30.0, y: currentStartingYPoint, width: 5.0, height: 5.0))
         //circle.center = self.view.center
         circle.layer.cornerRadius = 5.0
         circle.backgroundColor = UIColor(red:0.16, green:0.50, blue:0.73, alpha:1.0)
         
-        circle1 = UIView(frame: CGRect(x: 45.0, y: currentStartingYPoint, width: 10.0, height: 10.0))
+        circle1 = UIView(frame: CGRect(x: 37.0, y: currentStartingYPoint, width: 5.0, height: 5.0))
         //circle.center = self.view.center
         circle1.layer.cornerRadius = 5.0
         circle1.backgroundColor = UIColor(red:0.16, green:0.50, blue:0.73, alpha:1.0)
         
-        circle2 = UIView(frame: CGRect(x: 60.0, y: currentStartingYPoint, width: 10.0, height: 10.0))
+        circle2 = UIView(frame: CGRect(x: 44.0, y: currentStartingYPoint, width: 5.0, height: 5.0))
         //circle.center = self.view.center
         circle2.layer.cornerRadius = 5.0
         circle2.backgroundColor = UIColor(red:0.16, green:0.50, blue:0.73, alpha:1.0)
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         downObjects = 0
         animateUp(view: circle, delay: 0)
         animateUp(view: circle1, delay: 0.2)
-        animateUp(view: circle2, delay: 0.5)
+        animateUp(view: circle2, delay: 0.45)
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,7 +68,7 @@ class ViewController: UIViewController {
     }
     
     func animateDown(view: UIView, delay: Double) {
-        let newY = currentStartingYPoint + 15.0
+        let newY = currentStartingYPoint + 7.0
         
         let toNewYAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
         toNewYAnimation?.name = "newYAnimationDown"
@@ -106,7 +106,7 @@ class ViewController: UIViewController {
         toNewYAnimation?.beginTime = CACurrentMediaTime() + delay
         toNewYAnimation?.animationDidReachToValueBlock = { (anim: POPAnimation?) -> Void in
             if anim?.name == "newYAnimationTop" {
-                self.animateDown(view: view, delay: delay)
+                self.animateDown(view: view, delay: 0)
             }
         }
 //        toNewYAnimation?.completionBlock = {(anim: POPAnimation?, finished: Bool) -> Void in
