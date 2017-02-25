@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F10691F1E5D9A6A00973BD1 /* DeprecatedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F10691E1E5D9A6A00973BD1 /* DeprecatedController.swift */; };
+		5F1F31FA1E61982200B650ED /* TypingLoaderAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1F31F91E61982200B650ED /* TypingLoaderAnimation.swift */; };
 		5FF755131E5CAF8400F37194 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF755121E5CAF8400F37194 /* AppDelegate.swift */; };
 		5FF755151E5CAF8400F37194 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF755141E5CAF8400F37194 /* ViewController.swift */; };
 		5FF755181E5CAF8400F37194 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FF755161E5CAF8400F37194 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		3EEDAA6977B27F63C22B9729 /* Pods-chatai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chatai.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chatai/Pods-chatai.debug.xcconfig"; sourceTree = "<group>"; };
 		5F10691E1E5D9A6A00973BD1 /* DeprecatedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeprecatedController.swift; sourceTree = "<group>"; };
+		5F1F31F91E61982200B650ED /* TypingLoaderAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypingLoaderAnimation.swift; sourceTree = "<group>"; };
 		5FF7550F1E5CAF8400F37194 /* chatai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chatai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF755121E5CAF8400F37194 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FF755141E5CAF8400F37194 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				5FF7551B1E5CAF8400F37194 /* LaunchScreen.storyboard */,
 				5FF7551E1E5CAF8400F37194 /* Info.plist */,
 				5F10691E1E5D9A6A00973BD1 /* DeprecatedController.swift */,
+				5F1F31F91E61982200B650ED /* TypingLoaderAnimation.swift */,
 			);
 			path = chatai;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F1F31FA1E61982200B650ED /* TypingLoaderAnimation.swift in Sources */,
 				5F10691F1E5D9A6A00973BD1 /* DeprecatedController.swift in Sources */,
 				5FF755151E5CAF8400F37194 /* ViewController.swift in Sources */,
 				5FF755131E5CAF8400F37194 /* AppDelegate.swift in Sources */,

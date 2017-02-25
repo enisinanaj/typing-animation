@@ -12,111 +12,89 @@ import pop
 class ViewController: UIViewController {
     // We will attach various animations to this in response to drag events
     var currentStartingYPoint: Double = 55
-    var downObjects: Int = 0
     
     var circle: UIView!
     var circle1: UIView!
     var circle2: UIView!
+    var circleLarge: UIView!
+    var circle1Large: UIView!
+    var circle2Large: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initCircles()
-        addTypingAnimation();
+        prepareAnimation()
+        
+        initLargeCircles()
+        prepareAnimationLarge()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     func initCircles() {
-        // Add a draggable view
+        let green = UIColor(red:0.16, green:0.50, blue:0.73, alpha:1.0)
+        
         circle = UIView(frame: CGRect(x: 30.0, y: currentStartingYPoint, width: 5.0, height: 5.0))
-        //circle.center = self.view.center
-        circle.layer.cornerRadius = 5.0
-        circle.backgroundColor = UIColor(red:0.16, green:0.50, blue:0.73, alpha:1.0)
+        circle.layer.cornerRadius = 2.5
+        circle.backgroundColor = green
         
         circle1 = UIView(frame: CGRect(x: 37.0, y: currentStartingYPoint, width: 5.0, height: 5.0))
-        //circle.center = self.view.center
-        circle1.layer.cornerRadius = 5.0
-        circle1.backgroundColor = UIColor(red:0.16, green:0.50, blue:0.73, alpha:1.0)
+        circle1.layer.cornerRadius = 2.5
+        circle1.backgroundColor = green
         
         circle2 = UIView(frame: CGRect(x: 44.0, y: currentStartingYPoint, width: 5.0, height: 5.0))
-        //circle.center = self.view.center
-        circle2.layer.cornerRadius = 5.0
-        circle2.backgroundColor = UIColor(red:0.16, green:0.50, blue:0.73, alpha:1.0)
+        circle2.layer.cornerRadius = 2.5
+        circle2.backgroundColor = green
         
         self.view.addSubview(circle)
         self.view.addSubview(circle1)
         self.view.addSubview(circle2)
     }
     
-    func addTypingAnimation() {
-//        animateDown(view: circle, delay: 0)
-//        animateDown(view: circle1, delay: 0.2)
-//        animateDown(view: circle2, delay: 0.4)
-        animateAllUp()
+    func initLargeCircles() {
+        let red = UIColor(red:0.91, green:0.30, blue:0.24, alpha:1.0)
+        
+        circleLarge = UIView(frame: CGRect(x: 30.0, y: currentStartingYPoint + 70, width: 15.0, height: 15.0))
+        circleLarge.layer.cornerRadius = 7.5
+        circleLarge.backgroundColor = red
+        
+        circle1Large = UIView(frame: CGRect(x: 50.0, y: currentStartingYPoint + 70, width: 15.0, height: 15.0))
+        circle1Large.layer.cornerRadius = 7.5
+        circle1Large.backgroundColor = red
+        
+        circle2Large = UIView(frame: CGRect(x: 70.0, y: currentStartingYPoint + 70, width: 15.0, height: 15.0))
+        circle2Large.layer.cornerRadius = 7.5
+        circle2Large.backgroundColor = red
+        
+        self.view.addSubview(circleLarge)
+        self.view.addSubview(circle1Large)
+        self.view.addSubview(circle2Large)
     }
     
-    func animateAllUp() {
-        downObjects = 0
-        animateUp(view: circle, delay: 0)
-        animateUp(view: circle1, delay: 0.2)
-        animateUp(view: circle2, delay: 0.45)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func prepareAnimation() {
+        var views: Array<UIView> = Array<UIView>()
+        views.append(circle)
+        views.append(circle1)
+        views.append(circle2)
+        
+        let animation = TypingLoaderAnimation(viewList: views, resetZeroTo: currentStartingYPoint)
+        animation.startAnimation()
     }
     
-    func animateDown(view: UIView, delay: Double) {
-        let newY = currentStartingYPoint + 7.0
+    func prepareAnimationLarge() {
+        var views: Array<UIView> = Array<UIView>()
+        views.append(circleLarge)
+        views.append(circle1Large)
+        views.append(circle2Large)
         
-        let toNewYAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
-        toNewYAnimation?.name = "newYAnimationDown"
-        toNewYAnimation?.springSpeed = 3
-        toNewYAnimation?.toValue = newY
-        toNewYAnimation?.beginTime = CACurrentMediaTime() + delay
-        toNewYAnimation?.springBounciness = 0
-        toNewYAnimation?.animationDidReachToValueBlock = { (anim: POPAnimation?) -> Void in
-            if anim?.name == "newYAnimationDown" {
-                self.downObjects += 1
-                
-                if self.downObjects == 3 {
-//                    anim?.pop_removeAnimation(forKey: "newYAnimationDown")
-//                } else {
-                    self.animateAllUp()
-                }
-            }
-        }
-//        toNewYAnimation?.completionBlock = {(anim: POPAnimation?, finished: Bool) -> Void in
-//            if anim?.name == "newYAnimationDown" {
-//                self.animateUp(view: view)
-//            }
-//        }
-        
-        view.layer.pop_add(toNewYAnimation, forKey: "newYAnimationDown")
+        let animation = TypingLoaderAnimation(viewList: views, resetZeroTo: currentStartingYPoint + 70)
+        animation.jump = 14
+        animation.startAnimation()
     }
-    
-    func animateUp(view: UIView, delay: Double) {
-        let newY = currentStartingYPoint
-        
-        let toNewYAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
-        toNewYAnimation?.name = "newYAnimationTop"
-        toNewYAnimation?.springSpeed = 3
-        toNewYAnimation?.toValue = newY
-        toNewYAnimation?.beginTime = CACurrentMediaTime() + delay
-        toNewYAnimation?.animationDidReachToValueBlock = { (anim: POPAnimation?) -> Void in
-            if anim?.name == "newYAnimationTop" {
-                self.animateDown(view: view, delay: 0)
-            }
-        }
-//        toNewYAnimation?.completionBlock = {(anim: POPAnimation?, finished: Bool) -> Void in
-//            if anim?.name == "newYAnimationTop" {
-//                self.animateDown(view: view, delay: 0)
-//            }
-//        }
-        
-        view.layer.pop_add(toNewYAnimation, forKey: "newYAnimationTop")
-    }
-
 }
 
