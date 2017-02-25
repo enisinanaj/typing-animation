@@ -10,9 +10,9 @@
 
 In the project so far there's the animation shown above managed through a class called `TypingLoaderAnimation`.
 
-The animation class needs just to inputs which are a list of views as `Array<UIView>` that will be animated and a starting Y coordinate.
+The animation class needs just two inputs which are a list of views as `Array<UIView>` that will be animated and a starting Y coordinate.
 
-Optionally a `jump` variable can be set to determine the target position from the startin Y point.
+Optionally a `jump` variable can be set to determine the target position from the starting Y point.
 
 
 ## Usage
